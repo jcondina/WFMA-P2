@@ -1,0 +1,176 @@
+{
+    "type": "object",
+    "title": "Agents Events Schema - v0.1",
+    "description": "This JSON schema is used to validate the Agents Events payloads before sending them to the Aspect Quick Start",
+    "required": [
+        "AWSAccountId",
+        "AgentARN",
+        "CurrentAgentSnapshot",
+        "EventId",
+        "EventTimestamp",
+        "EventType",
+        "InstanceARN",
+        "PreviousAgentSnapshot",
+        "Version"
+    ],
+    "properties": {
+        "AWSAccountId": {
+            "$id": "#/properties/AWSAccountId",
+            "type": "null",
+            "title": "AWSAccountId schema",
+            "description": "AWS account id"
+        },
+        "AgentARN": {
+            "$id": "#/properties/AgentARN",
+            "type": "string",
+            "title": "AgentARN schema",
+            "description": "AWS Connect agent instance and state"
+        },
+        "CurrentAgentSnapshot": {
+            "$id": "#/properties/CurrentAgentSnapshot",
+            "type": "object",
+            "title": "CurrentAgentSnapshot schema",
+            "description": "Current Agent Snapshot schema",
+            "required": [
+                "AgentStatus",
+                "Configuration",
+                "Contacts"
+            ],
+            "properties": {
+                "AgentStatus": {
+                    "$id": "#/properties/CurrentAgentSnapshot/properties/AgentStatus",
+                    "type": "object",
+                    "title": "AgentStatus schema",
+                    "description": "Agent status object schema",
+                    "required": [
+                        "ARN",
+                        "Name",
+                        "StartTimestamp"
+                    ],
+                    "properties": {
+                        "ARN": {
+                            "$id": "#/properties/CurrentAgentSnapshot/properties/AgentStatus/properties/ARN",
+                            "type": "null",
+                            "title": "ARN schema",
+                            "description": "Agent status ARN"
+                        },
+                        "Name": {
+                            "$id": "#/properties/CurrentAgentSnapshot/properties/AgentStatus/properties/Name",
+                            "type": "string",
+                            "title": "Name schema",
+                            "description": "Current agent status"
+                        },
+                        "StartTimestamp": {
+                            "$id": "#/properties/CurrentAgentSnapshot/properties/AgentStatus/properties/StartTimestamp",
+                            "type": "string",
+                            "title": "StartTimestamp schema",
+                            "description": "Agent status start timestamp"
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "Configuration": {
+                    "$id": "#/properties/CurrentAgentSnapshot/properties/Configuration",
+                    "type": "object",
+                    "title": "Configuration schema",
+                    "description": "Agent configuration object schema",
+                    "required": [
+                        "AgentHierarchyGroups",
+                        "FirstName",
+                        "LastName",
+                        "RoutingProfile",
+                        "Username"
+                    ],
+                    "properties": {
+                        "AgentHierarchyGroups": {
+                            "$id": "#/properties/CurrentAgentSnapshot/properties/Configuration/properties/AgentHierarchyGroups",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "title": "AgentHierarchyGroups schema",
+                            "description": "Agent hierarchy group"
+                        },
+                        "FirstName": {
+                            "$id": "#/properties/CurrentAgentSnapshot/properties/Configuration/properties/FirstName",
+                            "type": "string",
+                            "title": "FirstName schema",
+                            "description": "Agent first name"
+                        },
+                        "LastName": {
+                            "$id": "#/properties/CurrentAgentSnapshot/properties/Configuration/properties/LastName",
+                            "type": "string",
+                            "title": "LastName schema",
+                            "description": "Agent last name"
+                        },
+                        "RoutingProfile": {
+                            "$id": "#/properties/CurrentAgentSnapshot/properties/Configuration/properties/RoutingProfile",
+                            "type": "null",
+                            "title": "RoutingProfile schema",
+                            "description": "Agent routing profile schema",
+                        },
+                        "Username": {
+                            "$id": "#/properties/CurrentAgentSnapshot/properties/Configuration/properties/Username",
+                            "type": "string",
+                            "title": "Username schema",
+                            "description": "Agent username"
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "Contacts": {
+                    "$id": "#/properties/CurrentAgentSnapshot/properties/Contacts",
+                    "type": "null",
+                    "title": "Contacts schema",
+                    "description": "Contacts object schema"
+                }
+            },
+            "additionalProperties": true
+        },
+        "EventId": {
+            "$id": "#/properties/EventId",
+            "type": "string",
+            "title": "EventId schema",
+            "description": "Id from triggered event"
+        },
+        "EventTimestamp": {
+            "$id": "#/properties/EventTimestamp",
+            "type": "string",
+            "title": "EventTimestamp schema",
+            "description": "Timestamp from triggered event"
+        },
+        "EventType": {
+            "$id": "#/properties/EventType",
+            "type": "string",
+            "title": "EventType schema",
+            "description": "Triggered event type",
+            "enum": [
+                "LOGIN",
+                "LOGOUT",
+                "STATE_CHANGE"
+            ]
+        },
+        "InstanceARN": {
+            "$id": "#/properties/InstanceARN",
+            "type": "null",
+            "title": "InstanceARN schema",
+            "description": "AWS Connect instance id"
+        },
+        "PreviousAgentSnapshot": {
+            "$id": "#/properties/PreviousAgentSnapshot",
+            "type": [
+                "string",
+                "null"
+            ],
+            "title": "PreviousAgentSnapshot schema",
+            "description": "Previous agent snapshot unique id"
+        },
+        "Version": {
+            "$id": "#/properties/Version",
+            "type": "string",
+            "title": "Version schema",
+            "description": "Date from used version"
+        }
+    },
+    "additionalProperties": true
+}

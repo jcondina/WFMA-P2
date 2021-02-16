@@ -1,0 +1,25 @@
+{
+    "AWSAccountId": null,
+    "AgentARN": "vkorovinsky",
+    "CurrentAgentSnapshot": {
+        "AgentStatus": {
+            "ARN": null,
+            "Name": "Lunch",
+            "StartTimestamp": "2021-02-11T20:01:59.757Z"
+        },
+        "Configuration": {
+            "AgentHierarchyGroups": null,
+            "FirstName": "Vitaly",
+            "LastName": "Korovinsky",
+            "RoutingProfile": null,
+            "Username": "vkorovinsky"
+        },
+        "Contacts": null
+    },
+    "EventId": "8997dab1-ebd3-444d-b116-7d3b116c7c6f",
+    "EventTimestamp": "2021-02-11T20:01:59.757Z",
+    "EventType": "STATE_CHANGE",
+    "InstanceARN": null,
+    "PreviousAgentSnapshot": null,
+    "Version": "2017-10-01"
+}

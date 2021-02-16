@@ -28,7 +28,7 @@ client = session.client("kinesis")
 
 for ev in events:
     client.put_record(
-        StreamName="Dev-Aspect-Feed-CreateStreamStack-1H4P7JYT1JAD3-KinesisStream-1R9JROM79JY3M",
+        StreamName="kronos-aspect-realtime-feed-CreateStreamStack-1SIXEGW59B6ES-KinesisStream-Gt8yxi9z2Ou6",
         Data=bytes(json.dumps(ev), "utf-8"),
         PartitionKey=str(uuid.uuid4()),
     )

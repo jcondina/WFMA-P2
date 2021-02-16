@@ -1,66 +1,25 @@
 {
-  "AWSAccountId":"547658042333",
-  "AgentARN":"arn:aws:connect:us-east-1:547658042333:instance/61bd9a26-a056-4faf-920d-c7f2f0c5e572/agent-state/a36768b6-1829-5d1b-b783-6b0d137a9d22",
-  "CurrentAgentSnapshot":{
-    "AgentStatus":{
-      "ARN":"arn:aws:connect:us-east-1:547658042333:instance/61bd9a26-a056-4faf-920d-c7f2f0c5e572/agent-state/12c87838-4d36-5956-b2b4-a6a252ec1530",
-      "Name":"Break",
-      "StartTimestamp":"2020-10-29T19:59:01.941Z"
-    },
-    "Configuration":{
-      "AgentHierarchyGroups":null,
-      "FirstName":"Vitaly",
-      "LastName":"Korovinsky",
-      "RoutingProfile":{
-        "ARN":"arn:aws:connect:us-east-1:547658042333:instance/61bd9a26-a056-4faf-920d-c7f2f0c5e572/routing-profile/4c35cd9b-9a8c-4d4d-9f0a-49004855a625",
-        "Concurrency":[
-          {
-            "AvailableSlots":2,
-            "Channel":"CHAT",
-            "MaximumSlots":2
-          },
-          {
-            "AvailableSlots":1,
-            "Channel":"VOICE",
-            "MaximumSlots":1
-          }
-        ],
-        "DefaultOutboundQueue":{
-          "ARN":"arn:aws:connect:us-east-1:547658042333:instance/61bd9a26-a056-4faf-920d-c7f2f0c5e572/queue/863f59b1-c663-4792-92c4-d4647e0669bc",
-          "Channels":[
-            "VOICE"
-          ],
-          "Name":"BasicQueue"
-        },
-        "InboundQueues":[
-          {
-            "ARN":"arn:aws:connect:us-east-1:547658042333:instance/61bd9a26-a056-4faf-920d-c7f2f0c5e572/queue/863f59b1-c663-4792-92c4-d4647e0669bc",
-            "Channels":[
-              "CHAT",
-              "VOICE"
-            ],
-            "Name":"BasicQueue"
-          },
-          {
-            "ARN":"arn:aws:connect:us-east-1:547658042333:instance/61bd9a26-a056-4faf-920d-c7f2f0c5e572/agent-state/a36768b6-1829-5d1b-b783-6b0d137a9d22",
-            "Channels":[
-              "CHAT",
-              "VOICE"
-            ],
-            "Name":null
-          }
-        ],
-        "Name":"Basic Routing Profile"
-      },
-      "Username":"vkorovinsky"
-    },
-    "Contacts":[]
-  },
-  "EventId":"29d2fb0f-a07a-474d-ada2-192744bb7146",
-  "EventTimestamp":"2020-10-29T19:59:01.941Z",
-  "EventType":"STATE_CHANGE",
-  "InstanceARN":"arn:aws:connect:us-east-1:547658042333:instance/61bd9a26-a056-4faf-920d-c7f2f0c5e572",
-  "MessageDeduplicationId":"29d2fb0f-a07a-474d-ada2-192744bb7146",
-  "PreviousAgentSnapshot":"7531f5e2-7568-4c23-b95a-0a55008bfb62",
-  "Version":"2017-10-01"
+	"AWSAccountId": null,
+	"AgentARN": "vkorovinsky",
+	"CurrentAgentSnapshot": {
+		"AgentStatus": {
+			"ARN": null,
+			"Name": "Break",
+			"StartTimestamp": "2020-10-29T19:59:01.941Z"
+		},
+		"Configuration": {
+			"AgentHierarchyGroups": null,
+			"FirstName": "Vitaly",
+			"LastName": "Korovinsky",
+			"RoutingProfile": null,
+			"Username": "vkorovinsky"
+		},
+		"Contacts": null
+	},
+	"EventId": "29d2fb0f-a07a-474d-ada2-192744bb7146",
+	"EventTimestamp": "2020-10-29T19:59:01.941Z",
+	"EventType": "STATE_CHANGE",
+	"InstanceARN": null,
+	"PreviousAgentSnapshot": "7531f5e2-7568-4c23-b95a-0a55008bfb62",
+	"Version": "2017-10-01"
 }
