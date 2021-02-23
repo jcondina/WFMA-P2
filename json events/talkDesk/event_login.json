@@ -1,0 +1,14 @@
+{
+    "data": {
+        "event": "agent_login",
+        "agent_id": "5ff622930042b3000c1b0a94",
+        "agent.name": "Jestoni A.",
+        "agent.email": "jestoni.arnaldo@teletech.com",
+        "time.now": "2021-02-23 10: 01: 23.000Z -0800",
+        "time.today": "2021-02-23",
+        "previous_status": "",
+        "current_status": "",
+        "time.changed_at": "n/a",
+        "time.changed_at.iso8601": "n/a"
+    }
+}

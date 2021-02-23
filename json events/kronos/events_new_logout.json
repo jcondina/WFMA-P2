@@ -4,7 +4,7 @@
     "CurrentAgentSnapshot": {
         "AgentStatus": {
             "ARN": null,
-            "Name": "Lunch",
+            "Name": "Offline",
             "StartTimestamp": "2021-02-11T20:01:59.757Z"
         },
         "Configuration": {
@@ -18,7 +18,7 @@
     },
     "EventId": "8997dab1-ebd3-444d-b116-7d3b116c7c6f",
     "EventTimestamp": "2021-02-11T20:01:59.757Z",
-    "EventType": "STATE_CHANGE",
+    "EventType": "LOGOUT",
     "InstanceARN": null,
     "PreviousAgentSnapshot": null,
     "Version": "2017-10-01"

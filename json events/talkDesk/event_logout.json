@@ -1,0 +1,14 @@
+{
+    "data": {
+        "event": "agent_logout",
+        "agent_id": "601b5e7780be3e0006951d08",
+        "agent.name": "Josephine Santos",
+        "agent.email": "josephine.santos@teletech.com",
+        "time.now": "2021-02-18 10: 09: 09 -0800",
+        "time.today": "2021-02-18",
+        "previous_status": "",
+        "current_status": "",
+        "time.changed_at": "n/a",
+        "time.changed_at.iso8601": "n/a"
+    }
+}
