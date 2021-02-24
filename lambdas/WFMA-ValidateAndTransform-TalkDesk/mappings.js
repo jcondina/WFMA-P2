@@ -1,40 +1,47 @@
-// const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 const { baseOutputPayload, talkDesk } = require('./constants');
 
 const mappings = {
-    talkDesk: TalkDeskMapping
+    talkDesk: TalkDeskMapping,
+    kronos: KronosMapping
 };
 
-function TalkDeskMapping(inputPayload) {
+function KronosMapping(payload) {
+    return payload;
+}
+
+function TalkDeskMapping(payload) {
     let outputPayload = baseOutputPayload;
     
-    outputPayload.CurrentAgentSnapshot.AgentStatus.Name = isLoginOrLogout ? useCustomMappingValue('agentStatus', inputPayload) : talkDesk.agentStatus[inputPayload.data.current_status];
-    outputPayload.CurrentAgentSnapshot.AgentStatus.StartTimestamp = isLoginOrLogout ? useCustomMappingValue('timestamp', inputPayload) : inputPayload.data["time.changed_at.iso8601"].replace(/\s+/g, '') + "Z";
-    outputPayload.EventTimestamp = isLoginOrLogout ? useCustomMappingValue('timestamp', inputPayload) : inputPayload.data["time.changed_at.iso8601"].replace(/\s+/g, '') + "Z";
+    outputPayload.CurrentAgentSnapshot.AgentStatus.Name = isTalkDeskLoginOrLogout ? useCustomTalkDeskMappingValue('agentStatus', payload) : talkDesk.agentStatus[payload.data.current_status];
+    outputPayload.CurrentAgentSnapshot.AgentStatus.StartTimestamp = isTalkDeskLoginOrLogout ? useCustomTalkDeskMappingValue('timestamp', payload) : payload.data["time.changed_at.iso8601"].replace(/\s+/g, '') + "Z";
+    outputPayload.EventTimestamp = isTalkDeskLoginOrLogout ? useCustomTalkDeskMappingValue('timestamp', payload) : payload.data["time.changed_at.iso8601"].replace(/\s+/g, '') + "Z";
     
-    outputPayload.EventType = talkDesk.eventType[inputPayload.data.event];
-    outputPayload.AgentARN = inputPayload.data["agent.email"];
-    outputPayload.CurrentAgentSnapshot.Configuration.FirstName = inputPayload.data["agent.name"];
-    outputPayload.CurrentAgentSnapshot.Configuration.Username = inputPayload.data.agent_id;
-    outputPayload.EventId = 'test-event-id'; //uuidv4();
+    outputPayload.EventType = talkDesk.eventType[payload.data.event];
+    outputPayload.AgentARN = payload.data["agent.email"];
+    outputPayload.CurrentAgentSnapshot.Configuration.FirstName = payload.data["agent.name"];
+    outputPayload.CurrentAgentSnapshot.Configuration.Username = payload.data.agent_id;
+    outputPayload.EventId = uuidv4();
+
+    console.log('Transformed event: ', outputPayload);
 
     return outputPayload;
 }
 
-function useCustomMappingValue(property, inputPayload) {
+function useCustomTalkDeskMappingValue(property, payload) {
     if (property === 'agentStatus') {
-        return inputPayload.data.event === 'agent_login' ? talkDesk.agentStatus.available : talkDesk.agentStatus.offline;
+        return payload.data.event === 'agent_login' ? talkDesk.agentStatus.available : talkDesk.agentStatus.offline;
     }
 
     if (property === 'timestamp') {
-        const eventTimeStamp = inputPayload.data["time.now"];
+        const eventTimeStamp = payload.data["time.now"];
         const time = eventTimeStamp.substring(0, eventTimeStamp.lastIndexOf('-')) + "-00";
 
         return new Date(time).toISOString();
     }
 }
 
-function isLoginOrLogout(eventType) {
+function isTalkDeskLoginOrLogout(eventType) {
     return eventType === 'agent_login' || eventType === 'agent_logout';
 }
 

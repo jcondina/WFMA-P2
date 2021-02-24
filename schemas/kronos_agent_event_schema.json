@@ -1,6 +1,6 @@
 {
     "type": "object",
-    "title": "Agents Events Schema - v0.1",
+    "title": "Kronos Agents Events Schema - v0.1",
     "description": "This JSON schema is used to validate the Agents Events payloads before sending them to the Aspect Quick Start",
     "required": [
         "AWSAccountId",
@@ -99,7 +99,10 @@
                         },
                         "LastName": {
                             "$id": "#/properties/CurrentAgentSnapshot/properties/Configuration/properties/LastName",
-                            "type": "string",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
                             "title": "LastName schema",
                             "description": "Agent last name"
                         },
@@ -107,7 +110,7 @@
                             "$id": "#/properties/CurrentAgentSnapshot/properties/Configuration/properties/RoutingProfile",
                             "type": "null",
                             "title": "RoutingProfile schema",
-                            "description": "Agent routing profile schema",
+                            "description": "Agent routing profile schema"
                         },
                         "Username": {
                             "$id": "#/properties/CurrentAgentSnapshot/properties/Configuration/properties/Username",

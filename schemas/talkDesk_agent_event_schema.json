@@ -1,0 +1,92 @@
+{
+    "type": "object",
+    "title": "Talk Desk Agents Events Schema - v0.1",
+    "description": "This JSON schema is used to validate the Talk Desk Agents Events payloads when received",
+    "required": [
+        "data"
+    ],
+    "properties": {
+        "data": {
+            "$id": "#/properties/data",
+            "type": "object",
+            "title": "Data schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "event",
+                "agent_id",
+                "agent.name",
+                "agent.email",
+                "time.now",
+                "time.today",
+                "previous_status",
+                "current_status",
+                "time.changed_at",
+                "time.changed_at.iso8601"
+            ],
+            "properties": {
+                "event": {
+                    "$id": "#/properties/data/properties/event",
+                    "type": "string",
+                    "title": "The event schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "agent_id": {
+                    "$id": "#/properties/data/properties/agent_id",
+                    "type": "string",
+                    "title": "The agent_id schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "agent.name": {
+                    "$id": "#/properties/data/properties/agent.name",
+                    "type": "string",
+                    "title": "The agent.name schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "agent.email": {
+                    "$id": "#/properties/data/properties/agent.email",
+                    "type": "string",
+                    "title": "The agent.email schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "time.now": {
+                    "$id": "#/properties/data/properties/time.now",
+                    "type": "string",
+                    "title": "The time.now schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "time.today": {
+                    "$id": "#/properties/data/properties/time.today",
+                    "type": "string",
+                    "title": "The time.today schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "previous_status": {
+                    "$id": "#/properties/data/properties/previous_status",
+                    "type": "string",
+                    "title": "The previous_status schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "current_status": {
+                    "$id": "#/properties/data/properties/current_status",
+                    "type": "string",
+                    "title": "The current_status schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "time.changed_at": {
+                    "$id": "#/properties/data/properties/time.changed_at",
+                    "type": "string",
+                    "title": "The time.changed_at schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "time.changed_at.iso8601": {
+                    "$id": "#/properties/data/properties/time.changed_at.iso8601",
+                    "type": "string",
+                    "title": "The time.changed_at.iso8601 schema",
+                    "description": "An explanation about the purpose of this instance."
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}
