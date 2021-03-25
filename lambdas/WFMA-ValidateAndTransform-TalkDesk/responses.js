@@ -5,19 +5,27 @@ const responses = {
     error: responseInternalServerError
 };
 
-function responseOk(body) {
+function responseOk(message) {
     return {
         statusCode: 200,
-        body: body,
+        body: JSON.stringify({
+            statusCode: 200,
+            message: message,
+        }),
         headers: { 'x-wfma-version': apiVersion },
+        isBase64Encoded:  false,
     };
 }
 
-function responseInternalServerError(body) {
+function responseInternalServerError(body){
     return {
-        statusCode: 500,
-        body: body,
+        statusCode: 400,
+        body: JSON.stringify({
+            errorMessage: body,
+            statusCode: 400,
+        }),
         headers: { 'x-wfma-version': apiVersion },
+        isBase64Encoded: false,
     };
 }
 

@@ -1,6 +1,6 @@
 const validate = require('jsonschema').validate;
-const talkDeskEventSchema = require('../../schemas/talkDesk_agent_event_schema.json');
-const kronosEventSchema = require('../../schemas/kronos_agent_event_schema.json');
+const talkDeskEventSchema = require('./schemas/talkDesk_agent_event_schema.json');
+const kronosEventSchema = require('./schemas/kronos_agent_event_schema.json');
 
 const validations = {
     talkDesk: TalkDeskPayloadValidation,
@@ -20,7 +20,7 @@ function ValidatePayload(payload, schema){
             
     if (isPayloadValid.errors.length !== 0) {
         console.log(isPayloadValid);
-        throw new Error("Received Talk Desk payload is invalid");
+        throw new Error(`Received ${process.env.CLIENT_TYPE} payload is invalid`);
     }
 }
 

@@ -5,7 +5,7 @@ module.exports = {
     CREATING: 'CREATING',
     DELETING: 'DELETING'
   },
-  STREAM_NAME: 'kronos-aspect-realtime-feed-CreateStreamStack-1SIXEGW59B6ES-KinesisStream-Gt8yxi9z2Ou6',
+  STREAM_NAME: 'Logi-RTA-CreateStreamStack-KI1KN7IOJ3NM-KinesisStream-1TBNO9eLC4BU',
   PARTITION_KEY: '1',
   PAYLOAD_TYPE: 'String',
   REGION: 'us-east-2'

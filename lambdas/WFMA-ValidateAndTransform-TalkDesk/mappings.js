@@ -13,7 +13,7 @@ function KronosMapping(payload) {
 function TalkDeskMapping(payload) {
     let outputPayload = baseOutputPayload;
     
-    outputPayload.CurrentAgentSnapshot.AgentStatus.Name = isTalkDeskLoginOrLogout ? useCustomTalkDeskMappingValue('agentStatus', payload) : talkDesk.agentStatus[payload.data.current_status];
+    outputPayload.CurrentAgentSnapshot.AgentStatus.Name = isTalkDeskLoginOrLogout(payload.data.event) ? useCustomTalkDeskMappingValue('agentStatus', payload) : talkDesk.agentStatus[payload.data.current_status];
     outputPayload.CurrentAgentSnapshot.AgentStatus.StartTimestamp = isTalkDeskLoginOrLogout ? useCustomTalkDeskMappingValue('timestamp', payload) : payload.data["time.changed_at.iso8601"].replace(/\s+/g, '') + "Z";
     outputPayload.EventTimestamp = isTalkDeskLoginOrLogout ? useCustomTalkDeskMappingValue('timestamp', payload) : payload.data["time.changed_at.iso8601"].replace(/\s+/g, '') + "Z";
     
